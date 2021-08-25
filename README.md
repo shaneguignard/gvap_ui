@@ -96,7 +96,8 @@ Currently, if anything fails in the try-block a catch-all exception is thrown, b
 - Video Annotations
 
 Analysis of the videos will be returned to the Web Server from the backend as plain text files formatted as:
-\<frame\>, \<id\>, \<bb_left\>, <bb_top>, <bb_width>, <bb_height>, <conf>, <x>, <y>, <z>
+<br>
+\<frame\>, \<id\>, \<bb_left\>, \<bb_top\>, \<bb_width\>, \<bb_height\>, \<conf\>, \<x\>, \<y\>, \<z\>
 
 These files will be saved or held in the Web Server storage, and associated with a registered video from our database. 
 
@@ -114,7 +115,7 @@ Next, the client should extract a list from the analysis of all unique objects i
 5. Record whether images are the same or not from user feedback
 6. HTML Form
 7. Submit to database only if match is true
-  <row id> <id obj1> <id obj2>
+  \<row id\> \<id obj1\> \<id obj2\>
 
 For testing purposes, the training can be accomplished by simply asking the user if any 2 random objects are the same.
 
