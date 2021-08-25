@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+<!-- Session "Tab" Title  -->
+{% block title %}
+    Video Library
+{% endblock %}
+
+<!-- Page Title -->
+{% block header %}
+    My Video Library
+{% endblock %}
+
+<!-- Collection of background icons and images -->
+{% block content %}
+<!-- Present a list of questions from the system to the user regarding various objects tracked throughout the video -->
+<div id='video_container'>
+    <video id="query_video"> 
+        <source src='/static/{{video}}' type="video/mp4">
+        <source src='/static/{{video}}' type="video/webm">
+        <source src='/static/{{video}}' type="video/ogg">
+       
+    </video>
+    <canvas id='canvas'></canvas>
+</div>
+
+<div id='video_controls'>
+    <button id='play_button' onclick="play_video()">Play</button>
+    <!-- Scroll Bar -->
+    <!-- Elapsed time in Video -->
+
+</div>
+{% endblock %}
+
+
+{% block references %}
+<li><a href="https://pythonbasics.org/flask-upload-file/">Uploading a file with python and flask</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Manipulating_video_using_canvas">Manipulating video using HTML5 Canvas</a></li>
+{% endblock %}

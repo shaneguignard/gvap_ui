@@ -1,0 +1,10 @@
+begin to process: [image folder], path: [../storage/dataset/MOT17/train/MOT17-11-DPM/img1]
+processing: 100/900, 11%, time elapsed: 22.66s, fps: 4.41
+processing: 200/900, 22%, time elapsed: 45.12s, fps: 4.43
+processing: 300/900, 33%, time elapsed: 69.12s, fps: 4.34
+processing: 400/900, 44%, time elapsed: 90.94s, fps: 4.40
+processing: 500/900, 56%, time elapsed: 112.55s, fps: 4.44
+processing: 600/900, 67%, time elapsed: 134.98s, fps: 4.45
+processing: 700/900, 78%, time elapsed: 157.24s, fps: 4.45
+processing: 800/900, 89%, time elapsed: 181.51s, fps: 4.41
+done. time elapsed: 205.85s

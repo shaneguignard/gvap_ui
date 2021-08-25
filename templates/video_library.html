@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+<!-- Session "Tab" Title  -->
+{% block title %}
+    Video Library
+{% endblock %}
+
+<!-- Page Title -->
+{% block header %}
+    My Video Library
+{% endblock %}
+
+
+
+{% block content %}
+<form id = 'video_upload' method = "POST" action = "/" enctype = "multipart/form-data">
+    <input id='file_input' type = "file" name = "file">
+    <input id='submit_file' type = "submit" value = "Submit Video for Processing">
+</form>
+
+
+<!-- Collection of Previously processed or in process videos -->
+<!-- Loop through list of videos -->
+ <hr>
+ 
+ <span>
+ {% for video in videos %}
+     <a href = "/query/{{video['file_name']}}"><div class='video-container'>{{video['file_name']}}</div></a>
+ {% endfor %}
+     
+ </span>
+{% endblock %}
+
+{% block references %}
+<li><a href = "https://pythonbasics.org/flask-upload-file/" target = "_page">Uploading a file with python and flask</a></li>
+<li><a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/queries/">Building a database with flask SQLAlchemy</a></li>
+{% endblock %}
