@@ -12,23 +12,21 @@ The Video Ingestion Phase; any video from a URL link or feed could be passed to 
 Querying the video to discover some kind of information. 
 
 # Requirements
-- Overview
-- Scope
-Initial Queries will focus on position and number of objects
-Front end will need to communicate with backend in order to know when the video has finished being processed
-The back will provide a text file output which is it’s analysis of the video
-The interface should ask the user to help identify whether 2 detected objects in the video are the same or not.
-The interface will allow the user to retrieve a synapsis of the video based on a question parameter.
+- Initial Queries will focus on position and number of objects
+- Front end will need to communicate with backend in order to know when the video has finished being processed
+- The back will provide a text file output which is it’s analysis of the video
+- The interface should ask the user to help identify whether 2 detected objects in the video are the same or not.
+- The interface will allow the user to retrieve a synapsis of the video based on a question parameter.
 
 # User Requirements
-Upload Video
+# Upload Video
 - Users will upload a video file
 - Video will be passed to Backend for processing
 - Video Library (advanced feature)
 Initial assumption is that the entire system should be built offline for a single user. Therefore, the video library will exist as a master library of all previously processed videos.
 
 - Refinement Questionnaire and Algorithm training 
-“Are these 2 images the same object?”
+ “Are these 2 images the same object?”
 … (more to come as the project progresses)
 
 - Tagging an image (Advanced Feature)
@@ -39,7 +37,7 @@ The means of adding additional question templates should be modular, such that t
 
 # High-Fidelity Prototype
 
-- Sketch/ mock of horizontal prototype
+# Sketch/ mock of horizontal prototype
 
 # Upload Video page
 Features: 
@@ -136,7 +134,7 @@ This process will be similar to the video training, except that the focus will b
 # Concluding Thoughts
    This project is unfortunately not finished, but to myself or anyone else that forks this repo and would like to continue building out this project, here are some links that I found helpful while I was working on this project. It might provide some insights into how certain mechanisms work.
 
-References and Helpful web sources
+# References and Helpful web sources
 <br>
 https://motchallenge.net/instructions/
 <li><a href="https://pythonbasics.org/flask-upload-file/">Uploading a file with python and flask</a></li>
