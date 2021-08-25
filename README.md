@@ -96,7 +96,7 @@ Currently, if anything fails in the try-block a catch-all exception is thrown, b
 - Video Annotations
 
 Analysis of the videos will be returned to the Web Server from the backend as plain text files formatted as:
-<frame>, <id>, <bb_left>, <bb_top>, <bb_width>, <bb_height>, <conf>, <x>, <y>, <z>
+\<frame\>, \<id\>, \<bb_left\>, <bb_top>, <bb_width>, <bb_height>, <conf>, <x>, <y>, <z>
 
 These files will be saved or held in the Web Server storage, and associated with a registered video from our database. 
 
