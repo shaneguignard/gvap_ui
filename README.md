@@ -137,9 +137,11 @@ This process will be similar to the video training, except that the focus will b
    This project is unfortunately not finished, but to myself or anyone else that forks this repo and would like to continue building out this project, here are some links that I found helpful while I was working on this project. It might provide some insights into how certain mechanisms work.
 
 References and Helpful web sources
+<br>
 https://motchallenge.net/instructions/
 <li><a href="https://pythonbasics.org/flask-upload-file/">Uploading a file with python and flask</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Manipulating_video_using_canvas">Manipulating video using HTML5 Canvas</a></li>
-
+<li><a href='https://stackoverflow.com/questions/4298084/html5-frame-by-frame-viewing-frame-seeking'>Extracting frames from video in html and javascript</a></li>
+<li><a href="https://flask-sqlalchemy.palletsprojects.com/en/2.x/queries/">Building a database with flask SQLAlchemy</a></li>
 
 
