@@ -1,4 +1,4 @@
-# gvap_ui
+# General Video Analytics Platform - User Interface
  A thin client interface for a general video analytics platform.
 
 
@@ -12,8 +12,8 @@ The Video Ingestion Phase; any video from a URL link or feed could be passed to 
 Querying the video to discover some kind of information. 
 
 # Requirements
-# Overview
-# Scope
+- Overview
+- Scope
 Initial Queries will focus on position and number of objects
 Front end will need to communicate with backend in order to know when the video has finished being processed
 The back will provide a text file output which is it’s analysis of the video
@@ -39,93 +39,54 @@ The means of adding additional question templates should be modular, such that t
 
 # High-Fidelity Prototype
 
-Sketch/ mock of horizontal prototype
-Upload Video page
+- Sketch/ mock of horizontal prototype
+
+# Upload Video page
 Features: 
-Simple “Choose File” button
-Select algorithm profile [deepsort, tracktor, etc …]
-
-
-Fig1: Upload page mockup
+- Simple “Choose File” button
+- Select algorithm profile [deepsort, tracktor, etc …]
 
 Possible Future Page Features:
-Indicator icon on video file which indicates that the backend is still processing
-Estimated Time indicator
-Video upload status progress bar
-Search and re-naming videos
+- Indicator icon on video file which indicates that the backend is still processing
+- Estimated Time indicator
+- Video upload status progress bar
+- Search and re-naming videos
 
 
-Algorithm Annotation Page (optional involvement by user)
-
-Features:
-Present comparisons of objects to confirm whether or not they are the same object being tracked throughout the video. (yes/no)
-Only one comparison at a time.
-User can opt out at any time
-
-
-Fig2: Training page mockup
-
-
-
-
-
-
-
-
-
-
-
-Video Analysis page
+# Algorithm Annotation Page (optional involvement by user)
 
 Features:
-Search Query box “Get all frames with # of _____ in them?”
-Return short video clips that match the requirements of the query
+- Present comparisons of objects to confirm whether or not they are the same object being tracked throughout the video. (yes/no)
+- Only one comparison at a time.
+- User can opt out at any time
+
+# Video Analysis page
+
+Features:
+- Search Query box “Get all frames with # of _____ in them?”
+- Return short video clips that match the requirements of the query
 
 
-Fig3: Analysis page mockup
-
-Prototype Validation
+# Prototype Validation
 Technology Stack
-BackEnd Processing Node
-MySQL database to store and retrieve processed video data
 
-Local Mysql instance was created to develop schema and other database related systems before deploying to a production environment.
-
-Flask python webserver
-
-
+- BackEnd Processing Node
+- MySQL database to store and retrieve processed video data
+- Local Mysql instance was created to develop schema and other database related systems before deploying to a production environment.
+- Flask python webserver
 A simple Flask application server will be used to route and manage the HTTP requests from the client machine. Minimal processing should be done on the web server if at all possible. 
 This will only be used to redirect requests and retrieve data from database server
 
-Jinja2 Markup Language for Client Side
+- Jinja2 Markup Language for Client Side
 Markup Language that integrates with Flask for a more cohesive development experience
-HTML5 Canvas for video markup and manipulation
-Javascript for additional client side functionality (caching, wait-time estimates, etc ... ) 
+- HTML5 Canvas for video markup and manipulation
+- Javascript for additional client side functionality (caching, wait-time estimates, etc ... ) 
 
-Design
-Deployment Diagram
+# Implementation
 
+. Video upload
 
-
-
-
-
-
-Class Diagrams
-
-
-Sequence Diagrams
-Video Upload
-Video Training
-Video Query
- 
-
-Implementation
-Video upload
-
-In the figure below, we implement a HTML Form element, which will send the contents of an HTML Input element of type “file”. The element, and the file enclosed can be referenced on the server side via the name provided in the “name” attribute of the same HTML Input element.
-
-Fig4: video_library.html
+I implemented a HTML Form element, which will send the contents of an HTML Input element of type “file”. The element, and the file enclosed can be referenced on the server side via the name provided in the “name” attribute of the same HTML Input element.
 
 On the server side, the file is received at the url endpoint defined in the HTML Form elements “action” attribute. If the request is of type POST, then we will try to retrieve the files contained within the message. If successful, the file will be saved to the location “uploads/” with the filename provided. 
 
@@ -134,15 +95,7 @@ Before allowing the Web Server to send the newly uploaded video to the Backend S
 Currently, if anything fails in the try-block a catch-all exception is thrown, but the most common error will likely be because an invalid or improperly formatted filename was provided. If an error is caught, a message is sent to the user indicating that an error occurred, and an additional error message is logged into the Web Server.
 
 
-
-The video upload page implementation was straightforward and was completed on time and as expected. 
-
-
-
-
-
-
-Video Annotations
+. Video Annotations
 
 Analysis of the videos will be returned to the Web Server from the backend as plain text files formatted as:
 <frame>, <id>, <bb_left>, <bb_top>, <bb_width>, <bb_height>, <conf>, <x>, <y>, <z>
