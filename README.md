@@ -84,7 +84,7 @@ Markup Language that integrates with Flask for a more cohesive development exper
 
 # Implementation
 
-. Video upload
+- Video upload
 
 I implemented a HTML Form element, which will send the contents of an HTML Input element of type “file”. The element, and the file enclosed can be referenced on the server side via the name provided in the “name” attribute of the same HTML Input element.
 
@@ -95,7 +95,7 @@ Before allowing the Web Server to send the newly uploaded video to the Backend S
 Currently, if anything fails in the try-block a catch-all exception is thrown, but the most common error will likely be because an invalid or improperly formatted filename was provided. If an error is caught, a message is sent to the user indicating that an error occurred, and an additional error message is logged into the Web Server.
 
 
-. Video Annotations
+- Video Annotations
 
 Analysis of the videos will be returned to the Web Server from the backend as plain text files formatted as:
 <frame>, <id>, <bb_left>, <bb_top>, <bb_width>, <bb_height>, <conf>, <x>, <y>, <z>
@@ -109,55 +109,37 @@ Because the backend only supplies a text file that identifies the coordinates of
 Parse Analysis file, and append to a list of objects per frame, where each frame number has an array associated with it which represents each object within the frame.
 Next, the client should extract a list from the analysis of all unique objects in video
  
-Process file passed to client from webserver frame by frame. 
-Collect meta data from video file
-Collect array of images of objects by ID from video
-Present 2 images of 2 object IDs selected at random from the list of IDs in the video
-Record whether images are the same or not from user feedback
-HTML Form
-Submit to database only if match true
-<row id> <id obj1> <id obj2>
+1. Process file passed to client from webserver frame by frame. 
+2. Collect meta data from video file
+3. Collect array of images of objects by ID from video
+4. Present 2 images of 2 object IDs selected at random from the list of IDs in the video
+5. Record whether images are the same or not from user feedback
+6. HTML Form
+7. Submit to database only if match is true
+  <row id> <id obj1> <id obj2>
 
 For testing purposes, the training can be accomplished by simply asking the user if any 2 random objects are the same.
 
 In the future, the backend will present a single ID with 2 objects of uncertainty, and we will be able to use this to present which objects are of interest, rather than being of random choice.
 
-Video querying
+- Video querying
 
 The user would like to be able to ask a question about the video, and have a summarized version of the video presented to them. 
 
 This process will be similar to the video training, except that the focus will be on building a new “video” which represents the response to a user based query/ question.
 
-Collect array of number of objects in each frame of a video
-Collect “query” from user (User selects number of objects in frame that they are interested in)
-Filter video frames based on object count in frame
-Play new “filtered” video by pushing frame ID from array back to it. 
+1. Collect array of number of objects in each frame of a video
+2. Collect “query” from user (User selects number of objects in frame that they are interested in)
+3. Filter video frames based on object count in frame
+4. Play new “filtered” video by pushing frame ID from array back to it. 
 
-
-Support & Maintenance
-Documentation for future collaborators
-Testing
-Testing Backend
-Currently, at the time of creating this document, the backend was still undergoing development and had not yet been staged in a live running environment. For the time being a manual export from example run will be used to test video analysis and object annotations.
-
-Testing Database
-Testing the database consists of sending a small request to the server and ensuring that some expected data is returned (ie ping connection)
-
-Testing Frontend
-There are multiple endpoints within the website, each endpoint should be tested for status code HTTP 200
-
-
+# Concluding Thoughts
+   This project is unfortunately not finished, but to myself or anyone else that forks this repo and would like to continue building out this project, here are some links that I found helpful while I was working on this project. It might provide some insights into how certain mechanisms work.
 
 References and Helpful web sources
 https://motchallenge.net/instructions/
+<li><a href="https://pythonbasics.org/flask-upload-file/">Uploading a file with python and flask</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Manipulating_video_using_canvas">Manipulating video using HTML5 Canvas</a></li>
 
 
 
-To - Do
-Push to project to github
-Focus on documenting the progress that was made
-Identify challenges in pre-processing video on the client side. 
-Get a comparison of 2 objects from the video if possible for video annotation page. 
-Pictures of HTML pages ACTUAL for implementation phase
-Concluding thoughts and recommendations
-Powerpoint presentation
